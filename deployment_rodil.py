@@ -18,6 +18,7 @@ model=load_model()
 st.write("""
 # Weather Classifier"""
 )
+st.write("""Final Requirement""")
 file=st.file_uploader("Choose sky weather photo from computer",type=["jpg","png"])
 
 import cv2
