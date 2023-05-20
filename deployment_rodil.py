@@ -19,6 +19,8 @@ st.write("""
 # Weather Classifier"""
 )
 st.write("""Final Requirement""")
+st.write("""Submitted by: Azzelle Leira Rodil""")
+st.write("""This activity classify the sky weather condition, whether it is Cloudyy, Sunshine, Sunrise and Rain.""")
 file=st.file_uploader("Choose sky weather photo from computer",type=["jpg","png"])
 
 import cv2
