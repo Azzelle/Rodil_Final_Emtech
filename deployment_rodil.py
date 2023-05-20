@@ -25,14 +25,15 @@ file=st.file_uploader("Choose sky weather photo from computer",type=["jpg","png"
 
 import cv2
 from PIL import Image,ImageOps
+from tensorflow.keras.utils import load_img, img_to_array
 import numpy as np
+import cv2
 def import_and_predict(image_data,model):
-    size=(128,128)
-    image=ImageOps.fit(image_data,size,Image.ANTIALIAS)
-    img=np.asarray(image)
-    img_reshape=img[np.newaxis,...]
-    prediction=model.predict(img_reshape)
+    input_arr = img_to_array(image_data)
+    input_arr = np.array([input_arr])  # Convert single image to a batch.
+    prediction = model.predict(input_arr)
     return prediction
+
 if file is None:
     st.text("Please upload an image file")
 else:
